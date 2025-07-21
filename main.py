@@ -58,7 +58,7 @@ intents = discord.Intents.default()
 bot = commands.Bot(command_prefix='!', intents=intents)
 
 
-@tasks.loop(seconds=10)
+@tasks.loop(seconds=4)
 async def change_status():
     current_city = next(city_cycle)
     weather_status = await get_weather(current_city)
